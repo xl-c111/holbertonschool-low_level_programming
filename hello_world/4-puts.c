@@ -1,5 +1,5 @@
 #include <stdio.h>
-/**
+/*
  * main - Prints a message.
  *
  * Description: Prints "\"Programming is like building a multilingual puzzle"
@@ -9,6 +9,6 @@
  */
 int main(void)
 {
-p:uts("\"Programming is like building a multilingual puzzle");
+puts("\"Programming is like building a multilingual puzzle");
 return (0);
 }
