@@ -1,5 +1,5 @@
 #include <stdio.h>
-/*
+/**
  * main - Prints a message.
  *
  * Description: Prints "\"Programming is like building a multilingual puzzle"
