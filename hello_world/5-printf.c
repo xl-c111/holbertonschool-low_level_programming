@@ -1,15 +1,14 @@
 #include <stdio.h>
 
 /**
- * main - Prints using printf.
- *
- * Description: This program prints exactly the required sentence
- * followed by a new line using the printf function.
- *
- * Return: 0.
+ * main: Entry point
+ * Description: priint using the function printf
+ * 
+ * Return: always 0 (Success)
  */
+
 int main(void)
 {
-printf("with proper grammar, but the outcome is a piece of art,\n");
-return (0);
+	printf("with proper grammar, but the outcome is a piece of art,\n");
+	return(0); 
 }
