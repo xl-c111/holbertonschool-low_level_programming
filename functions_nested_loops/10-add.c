@@ -1,29 +1,37 @@
+#include "main.h"
 #include <stdio.h>
 
 /**
- * main -  a function that adds two integers and returns the result
+ * add - Adds two integers and returns the result.
+ * @a: First integer.
+ * @b: Second integer.
  *
- * Add - Add two integers
- * @a: first integer
- * @b: second integer
- *
- * Return: The sum of a and b
+ * Return: Sum of a and b.
  */
 
-
-int add(int a, int b);
 
 int add(int a, int b)
 {
 	return (a + b);
 }
 
+
+/**
+ * main - add two integers
+ * Description: use Prototype int add(int, int) to add
+ *
+ * Return: always 0 (Success)
+ */
+
+
 int main(void)
 {
-	int result = add(10, 20);
+	int n;
+
+	n = add(89, 9);
 
 
-	printf("Result is %d\n", result);
+	printf("The Sum is %d\n", n);
 
 	return (0);
 }
