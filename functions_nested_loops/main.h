@@ -7,5 +7,8 @@ int _putchar(char c);
 /* Function prototype for add */
 int add(int a, int b);
 
+/* Function prototype for print_alphabet */
+void print_alphabet(void);
+
 #endif /* MAIN_H */
 
