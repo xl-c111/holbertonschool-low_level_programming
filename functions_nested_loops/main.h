@@ -13,7 +13,8 @@ void print_alphabet(void);
 /* Function prototype for print_alphabet 10 times*/
 void print_alphabet_x10(void);
 
-
+/* Function prototype for checking for lowercase character*/
+int _islower(int c);
 
 #endif /* MAIN_H */
 
