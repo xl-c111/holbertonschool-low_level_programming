@@ -9,19 +9,19 @@
 
 int main(void)
 {
-	unsigned long long i, j, sum, k;
+	unsigned long i, j, sum, k;
 
 	i = 1;
 	j = 2;
-	printf("%llu", i);
+	printf("%lu", i);
 	printf(", ");
-	printf("%llu", j);
+	printf("%lu", j);
 	printf(", ");
 
 	for (k = 1; k < 49; k++)
 	{
 		sum = i + j;
-		printf("%llu", sum);
+		printf("%lu", sum);
 		if (k < 48)
 		{
 			printf(", ");
