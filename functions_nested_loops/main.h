@@ -22,5 +22,10 @@ int _isalpha(int c);
 /* Function prototype for printing a sign of number */
 int print_sign(int n);
 
+/* Function prototype for computing the absolute value of an integer */
+int _abs(int n);
+
+
+
 #endif /* MAIN_H */
 
