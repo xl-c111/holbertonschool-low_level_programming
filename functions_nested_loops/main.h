@@ -28,5 +28,8 @@ int _abs(int n);
 /* Function prototype for printing the last digit of a number */
 int print_last_digit(int n);
 
+/* Function prototype for printing the every minute of a day */
+void jack_bauer(void);
+
 #endif /* MAIN_H */
 
