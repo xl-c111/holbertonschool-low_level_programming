@@ -37,7 +37,8 @@ void times_table(void);
 /* Function prototype for printing all natural numbers from n to 98 */
 void print_to_98(int n);
 
-
+/* Function prototype for printing the n times table */
+void print_times_table(int n);
 
 #endif /* MAIN_H */
 
