@@ -12,9 +12,12 @@
 int main(void)
 {
 	unsigned long i, j, sum, k;
+	unsigned long i1, j1, sum1;
 
 	i = 1;
 	j = 2;
+	i1 = 0;
+	j1 = 0;
 	printf("%lu", i);
 	printf(", ");
 	printf("%lu", j);
@@ -22,13 +25,21 @@ int main(void)
 	for (k = 1; k < 97; k++)
 	{
 		sum = i + j;
-		printf("%lu", sum);
+		sum1 = i1 + j1;
+		if (sum < i)
+			sum1++;
+		if (i1 == 0)
+			printf("%lu", i);
+		else
+			printf("%lu%018lu", i1, i);
 		if (k < 96)
 		{
 			printf(", ");
 		}
 		i = j;
+		i1 = j1;
 		j = sum;
+		j1 = sum1;
 	}
 	printf("\n");
 	return (0);
