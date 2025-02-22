@@ -1,6 +1,6 @@
 #include <stdio.h>
 #define BASE 1000000000
-/*
+/**
  * main - print first 98 Fibonacci numbers, starting with 1 and 2
  *
  * Description: finds and prints the first 98 Fibonacci numbers,
@@ -28,7 +28,7 @@ int main(void)
 		else
 			printf("%lu%09lu", i1, i);
 		if (k < 98)
-			printf(", ");	
+			printf(", ");
 		sum = (i + j) % BASE;
 		sum1 = i1 + j1 + ((i + j) / BASE);
 		i = j;
