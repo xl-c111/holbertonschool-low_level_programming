@@ -1,4 +1,5 @@
 #include <stdio.h>
+#define BASE 1000000000
 /*
  * main - print first 98 Fibonacci numbers, starting with 1 and 2
  *
@@ -18,24 +19,18 @@ int main(void)
 	j = 2;
 	i1 = 0;
 	j1 = 0;
-	printf("%lu", i);
-	printf(", ");
-	printf("%lu", j);
-	printf(", ");
-	for (k = 1; k < 97; k++)
+
+	for (k = 1; k <= 98; k++)
 	{
-		sum = i + j;
-		sum1 = i1 + j1;
-		if (sum < i)
-			sum1++;
+
 		if (i1 == 0)
 			printf("%lu", i);
 		else
-			printf("%lu%018lu", i1, i);
-		if (k < 96)
-		{
-			printf(", ");
-		}
+			printf("%lu%09lu", i1, i);
+		if (k < 98)
+			printf(", ");	
+		sum = (i + j) % BASE;
+		sum1 = i1 + j1 + ((i + j) / BASE);
 		i = j;
 		i1 = j1;
 		j = sum;
