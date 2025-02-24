@@ -19,4 +19,8 @@ void print_numbers(void);
 /* Function for printing most numbers */
 void print_most_numbers(void);
 
+/* Function for printing more numbers */
+void more_numbers(void);
+
+
 #endif 
