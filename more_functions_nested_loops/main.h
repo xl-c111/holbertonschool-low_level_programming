@@ -22,5 +22,7 @@ void print_most_numbers(void);
 /* Function for printing more numbers */
 void more_numbers(void);
 
+/* Function for drawing a straight line */
+void print_line(int n);
 
 #endif 
