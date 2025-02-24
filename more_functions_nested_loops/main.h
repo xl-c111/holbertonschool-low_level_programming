@@ -25,4 +25,10 @@ void more_numbers(void);
 /* Function for drawing a straight line */
 void print_line(int n);
 
+/* Function for drawing a diagonal line */
+void print_diagonal(int n);
+
+
+
+
 #endif 
