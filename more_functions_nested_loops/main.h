@@ -28,7 +28,10 @@ void print_line(int n);
 /* Function for drawing a diagonal line */
 void print_diagonal(int n);
 
+/* Function for printing a square */
+void print_square(int size);
 
-
+/* Function for printing a triangle */
+void print_triangle(int size);
 
 #endif 
