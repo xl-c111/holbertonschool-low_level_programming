@@ -34,4 +34,9 @@ void print_square(int size);
 /* Function for printing a triangle */
 void print_triangle(int size);
 
+/* Function for printing an integer */
+void print_number(int n);
+
+
+
 #endif 
