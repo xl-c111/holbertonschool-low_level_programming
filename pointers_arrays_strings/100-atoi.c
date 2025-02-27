@@ -31,6 +31,12 @@ int _atoi(char *s)
 	}
 	while (*s >= '0' && *s <= '9')
 	{
+		int digit = *s - '0';
+
+		if (result > (INT_MAX - digit) / 10)
+		{
+			return (sign == 1 ? INT_MAX : INT_MIN);
+		}
 		result = result * 10 + (*s - '0');
 		s++;
 	}
