@@ -2,7 +2,7 @@
 /**
  * _strncat - concatenates two strings, using at most n bytes from src
  * @dest: the destination string
- * @src: the source string to be appened to dest
+ * @src: the source string to be appended to dest
  * @n: the maximum number of bytes to be copied from dest
  *
  * Description: it will use at most n bytes from src; and
