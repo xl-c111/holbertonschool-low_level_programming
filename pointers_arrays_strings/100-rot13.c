@@ -13,9 +13,10 @@ char *rot13(char *str)
 	{
 		if ((*ptr >= 'A' && *ptr <= 'Z') || (*ptr >= 'a' && *ptr <= 'z'))
 		{
-			*ptr = ((*ptr - ('A' & ~(*ptr & 32)) + 13) % 26) + ('A' & ~(*ptr & 32));
+			*ptr = ((((*ptr & ~32) - 'A' + 13) % 26) + 'A') | (*ptr & 32);
 		}
 		ptr++;
 	}
 	return (str);
 }
+
