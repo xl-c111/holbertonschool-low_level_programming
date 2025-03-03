@@ -5,6 +5,7 @@
  * @s: a given string
  * @c: the specific character to be searched in s
  * Return: a pointer to the first occurrence of the character
+ *         or NULL if not found:wq
  *
  */
 char *_strchr(char *s, char c)
@@ -17,7 +18,7 @@ char *_strchr(char *s, char c)
 		}
 		s++;
 	}
-	if (*s == '\0')
+	if (c == '\0')
 	{
 		return (s);
 	}
