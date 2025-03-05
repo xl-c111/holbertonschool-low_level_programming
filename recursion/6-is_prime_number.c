@@ -9,7 +9,7 @@
  */
 int is_prime_recursive(int n, int i)
 {
-	if (i * i > n)
+	if (i * i > n)      // equals i > squrt(n)
 	{
 		return (1);
 	}
