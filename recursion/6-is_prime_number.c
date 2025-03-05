@@ -32,5 +32,5 @@ int is_prime_number(int n)
 	{
 		return (0);
 	}
-	return (is_prime_recursive(n, 2));
+	return (is_prime_recursive(n, 2));   // a prime number is a netural number greater than 1
 }
