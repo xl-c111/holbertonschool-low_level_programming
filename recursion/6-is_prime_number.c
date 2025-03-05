@@ -9,7 +9,7 @@
  */
 int is_prime_recursive(int n, int i)
 {
-	if (i * i > n)      // equals i > squrt(n)
+	if (i * i > n)      // equals i > sqrt(n), prime check range(2 - sqrt(n)) 
 	{
 		return (1);
 	}
