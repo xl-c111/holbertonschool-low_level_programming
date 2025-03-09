@@ -11,10 +11,10 @@ void print_rev(char *s)
 
 	while (s[length] != '\0')
 	{
-		length++;
+		length++;         // iterate each char of string and increment length by 1
 	}
 
-	for (i = length - 1; i >= 0; i--)
+	for (i = length - 1; i >= 0; i--)    // set i to the last index of string, as long as i is non-negative, loop continues
 	{
 		_putchar(s[i]);
 	}
