@@ -4,7 +4,7 @@
  * string_nconcat - concatenates two strings, using at most n bytes of s2
  * @s1: pointer the first string
  * @s2: pointer the second string
- * @n: the first number of bytes of s2
+ * @n: the maximum bytes of s2 to use
  * Return: a pointer point to newly allocated space of memeory
  *         NULL if fails
  */
