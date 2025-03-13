@@ -33,7 +33,7 @@ int **alloc_grid(int width, int height)
 
 		if (grid[h] == NULL)
 		{
-			for (i = 0; i < h; i++)    /* loop through all preciously allocated rows and free them */
+			for (i = 0; i < h; i++)    /* loop through all previously allocated rows and free them */
 			{
 				free(grid[i]);
 			}
