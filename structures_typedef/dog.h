@@ -1,0 +1,18 @@
+#ifndef DOG_H
+#define DOG_H
+
+/**
+ * struct dog - represents a dog
+ * @name: a pointer to a character array to store dog's name
+ * @age: a float to represent dog's age
+ * @owner: a pointer to a character array to store name of dog's owner
+ *
+ */
+struct dog
+{
+	char *name;
+	float age;
+	char *owner;
+};
+
+#endif
