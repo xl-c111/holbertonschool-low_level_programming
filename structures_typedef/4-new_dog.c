@@ -52,7 +52,7 @@ char *_strcpy(char *dest, char *src)
 
 dog_t *new_dog(char *name, float age, char *owner)   /* dog_t: a custom data */
 {
-	/* new_dog is declared as a pointer to store the address of the memory block allocated by malloc */
+	/* Allocated memory for a dog_t structure and get a pointer new_dog */
 	dog_t *new_dog = malloc(sizeof(dog_t));  
 	{
 		if (new_dog == NULL)
