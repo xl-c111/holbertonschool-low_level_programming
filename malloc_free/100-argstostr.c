@@ -19,7 +19,7 @@ char *argstostr(int ac, char **av)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)  /* the inner loop counts characters in each string */
 			total_length++; 
-		total_length++;    /* for each new line after each string */
+		total_length++;    /* for the newline after each string */
 	}
 	total_length++;    /* for the terminating null byte */
 
