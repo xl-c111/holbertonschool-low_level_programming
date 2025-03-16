@@ -20,7 +20,7 @@ char **strtow(char *str)
 			i++;
 		if (str[i] != '\0')
 		{
-			word_count++;
+			word_count++;   /* word_count only increases when code encounters a non-space character after skipping spaces*/
 			while (str[i] != '\0' && str[i] != ' ')
 				i++;
 		}
