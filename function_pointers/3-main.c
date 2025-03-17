@@ -8,7 +8,7 @@
  * @argv: argument vector 
  *        argv[0]: the name of program - ./calc 
  *	  argv[1]: the first operand
- *        argv[2]: the operator
+ *        argv[2]: the operator string
  *	  argv[3]: the second operand
  * Return: Always 0 (Success)
  *         98 if the number of arguments is wrong
@@ -39,7 +39,7 @@ int main(int argc, char **argv)
 		return (99);
 	}
 
-	a = atoi(argv[1]);       /* converts first and third command-line arguments from string to int */
+	a = atoi(argv[1]);       /* converts second and forth command-line arguments from string to int */
 	b = atoi(argv[3]);
         
 	/* argv[2][0] is a string, starting with one single char, ending with '\0', argv[2][0] is the operator */
