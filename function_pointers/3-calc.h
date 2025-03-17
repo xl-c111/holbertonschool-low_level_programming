@@ -4,9 +4,8 @@
 /**
  * struct op - Struct op
  *
- * @op: a pointer to string that represents an operator
- * @f: a function pointer that points to a function taking two integers
- *     as parameters, returns an int
+ * @op: a pointer to char which is used to store a string representing an operator
+ * @f: a pointer to a function. This function takes two integer parameters, returns an int
  */
 typedef struct op
 {
