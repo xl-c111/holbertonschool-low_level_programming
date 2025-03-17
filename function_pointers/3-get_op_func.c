@@ -24,11 +24,7 @@ int (*get_op_func(char *s))(int, int)
 
 	if (s == NULL || s[1] != '\0')
 		return (NULL);
-	while (ops[i].op != NULL)
-	{
-		if (s[0] == ops[i].op[0])
-			return (ops[i].f);
+	while (ops[i].op && s[0] != ops[i].op[0])
 		i++;
-	}
-	return (NULL);
+	return (ops[i].f);
 }
