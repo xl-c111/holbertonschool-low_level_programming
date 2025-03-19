@@ -25,7 +25,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		}
 		if (value == NULL)
 		{
-			printf("nil");
+			printf("(nil)");
 		}
 
 		if (separator != NULL && i < n - 1)
@@ -35,6 +35,4 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	}
 	printf("\n");
 	va_end(args);
-
-
 }
