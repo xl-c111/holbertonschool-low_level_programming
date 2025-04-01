@@ -25,12 +25,12 @@ int _strlen(const char *str)
  */
 list_t *add_node(list_t **head, const char *str)
 {
-	if (head == NULL)
-		return (NULL);
-	if (str == NULL)
+	list_t *temp;
+
+	if (head == NULL || str == NULL)
 		return (NULL);
 
-	list_t *temp = malloc(sizeof(list_t));
+	temp = malloc(sizeof(list_t));
 
 	if (temp == NULL)
 		return (NULL);
