@@ -58,6 +58,6 @@ list_t *add_node_end(list_t **head, const char *str)
 		temp = temp->next;          /* temp moves along the list until reaches the last node */
 
 	}
-	temp->next = newNode;               /* once loop finishes, temp points to the last node in the list */
+	temp->next = newNode;               /* once loop finishes, set next ptr of temp(the current last node) to the new node */
 	return (newNode);
 }
