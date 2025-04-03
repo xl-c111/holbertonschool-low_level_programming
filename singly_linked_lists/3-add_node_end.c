@@ -34,7 +34,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	newNode = malloc(sizeof(list_t));           /* allocates memory for the new node with the size of list_t structure */ 
 	if (newNode == NULL)
 		return (NULL);
-	newNode->str = strdup(str);        /* uses strdup, the new node gets its own copy of str, doesn't rely on orginal memory */
+	newNode->str = strdup(str);        /* uses strdup, the new node gets its own copy of str, doesn't rely on the orginal memory */
 
 	if (newNode->str == NULL)          /* if the str duplication fails */
 	{
@@ -43,7 +43,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	}
 
 	newNode->len = _strlen(newNode->str);      /* calculates the length of new str and stores it in the len member of new node*/
-	newNode->next = NULL;     /* initializes the next ptr of the new node to NULL, because this is gonna be the last element in the list*/
+	newNode->next = NULL;     /* initializes the next ptr of the new node to NULL, because this is gonna be the last node in the list*/
         
 	/* head is a ptr to head ptr, *head is head ptr itself, *head == NULL is checking if the list is empty */
 	if (*head == NULL)                        
