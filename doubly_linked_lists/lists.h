@@ -2,7 +2,7 @@
 #define LISTS_H
 /**
  * struct dlistint_s - doubly linked list
- * @n: integer
+ * @n: an integer that holds the value stored in each node
  * @prev: points to the previous node
  * @next: points to the next node
  *
