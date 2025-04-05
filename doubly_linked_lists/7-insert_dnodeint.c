@@ -23,31 +23,34 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (NULL);
 
 	newNode->n = n;
-	if (idx == 0)
+	if (idx == 0）            /* inserts a newNode at the head */
 	{
 		newNode->prev = NULL;
-		newNode->next = *h;
+		newNode->next = *h;        
 		if (*h != NULL)
-			(*h)->prev = newNode;
-		*h = newNode;
+			(*h)->prev = newNode;     /* original head pre ptr points to newNode */
+		/* when inserting a new node at the head, the entry point changes, must update the head ptr to newNode */
+		*h = newNode;     
 		return (newNode);
 	}
-	currentNode = *h;
+	/* sets currentNode to point the head of the list, allows the function to traverse the list starting from the head */ 
+	currentNode = *h;    
 
-	while (currentNode != NULL && i < idx - 1)
+	while (currentNode != NULL && i < idx - 1)   /* ensures i reach the node just before the target index, loop stops */
 	{
 		currentNode = currentNode->next;
 		i++;
 	}
 
-	if (currentNode == NULL)
+	if (currentNode == NULL)         /* means the index exceed the length of the list */
 		return (NULL);
 
-	newNode->next = currentNode->next;
-	newNode->prev = currentNode;
+	newNode->next = currentNode->next;     /* next ptr is set to the node that comes after the currentNode */       
+	newNode->prev = currentNode;           /* prev ptr is set to the currentNode */
 
 	if (currentNode->next != NULL)
-		currentNode->next->prev = newNode;
-	currentNode->next = newNode;
+		 /* if currentNode has a next node, update its previous pointer to point back to the newNode*/
+		currentNode->next->prev = newNode; 
+	currentNode->next = newNode;           /* updates currentNode's next ptr point to newNode*/
 	return (newNode);
 }
