@@ -5,11 +5,10 @@
  * @n: a pointer to the unsigned long int in which to set the bit
  * @index: the given index
  * Return: 1 if it worked, or -1 if an error occurred
- * Description: - mask = 1UL << index; shift the number 1 left by index positions, create a bitmask that has only the bit
- *                                     at position index set to 1, all other bits set to 0 
+ * Description: - mask = 1UL << index; shift the number 1 left by index positions, making a mask with 1 at index
  *              - *n = *n | mask; *n: deference the pointer n, access to actual value pointed to by n
- *                                mask: a bitmask that has only a 1 at the index position
- *                                *n | mask: a bitwise OR between *n and mask, set the bit at the position to 1, others renain unchanged
+ *                                mask: a mask that has only a 1 at the index position
+ *                                *n | mask: a bitwise OR between *n and mask, set the bit at the position to 1, others remain unchanged
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
