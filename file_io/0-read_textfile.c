@@ -10,7 +10,7 @@
  * @filename: a pointer to a string that specifies the name of file to read
  * @letters: the number of letters it should read and print
  * Return: the actual number of letters it could read and print
- *         0 - if filename is NULL 
+ *         0 - if filename is NULL
  *           - if write fails or does not write the expected amount of bytes
  *
  */
@@ -50,7 +50,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		close(fd);
 		return (0);
 	}
-	free (buffer);
+	free(buffer);
 	close(fd);
 
 	return (written_bytes);
