@@ -73,10 +73,10 @@ void close_file(int fd)
  * @argc: argument numbers
  * @argv: argument vector
  * Return: 0 if succeed
- *         97 if the number of arguments is not the correct one
- *         98 if file_from does not exist, or if you can not read it
- *         99 if you can not create or if write to file_to fails
- *         100 if you can not close a file descriptor
+ *         exit with 97 if the number of arguments is not the correct one
+ *         exit with 98 if file_from does not exist, or if you can not read it
+ *         exit with 99 if you can not create or if write to file_to fails
+ *         exit with 100 if you can not close a file descriptor
  * Description: - check the number of command-line arguments
  *              - open the src file for reading fd_from = open_file_from(argv[1]);
  *              - open the dst file for writing fd_to = open_file_to(argv[2])
