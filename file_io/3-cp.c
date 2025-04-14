@@ -60,10 +60,10 @@ int main(int argc, char *argv[])
 		close(fd_from);
 		exit(99);
 	}
-	while ((read_bytes = read(fd_from, buffer, BUFFER_SIZE)) > 0)
+	read_bytes = read(fd_from, buffer, BUFFER_SIZE);
+	while (read_bytes > 0)
 	{
 		written_bytes = write(fd_to, buffer, read_bytes);
-
 		if (written_bytes == -1 || written_bytes != read_bytes)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
@@ -71,10 +71,11 @@ int main(int argc, char *argv[])
 			close(fd_to);
 			exit(99);
 		}
+		read_bytes = read(fd_from, buffer, BUFFER_SIZE);
 	}
 	if (read_bytes == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file%s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		close(fd_from);
 		close(fd_to);
 		exit(98);
