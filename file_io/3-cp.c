@@ -5,7 +5,7 @@
 #include <errno.h>
 #include <string.h>
 
-#define BUFFER_SIZE 1024
+#define BUFFER_SIZE 1024         /* define a buffer size for reading and writing, 1024 bytes */
 
 /**
  * close_file - close the file
@@ -20,8 +20,8 @@ void close_file(int fd)
 	}
 }
 /**
- * check_args - check the number of argcs
- * @argc: number of command-line arguments passed to the programm
+ * check_args - check the number of arguments
+ * @argc: number of command-line arguments passed to the program
  */
 void check_args(int argc)
 {
@@ -71,7 +71,7 @@ int open_file_to(const char *filename)
  * @argc: argument numbers
  * @argv: argument vector
  * Return: 0 if succeed
- *         97 if the number of argument is not the correct one
+ *         97 if the number of arguments is not the correct one
  *         98 if file_from does not exist, or if you can not read it
  *         99 if you can not create or if write to file_to fails
  *         100 if you can not close a file descriptor
@@ -82,8 +82,8 @@ int main(int argc, char *argv[])
 	char buffer[BUFFER_SIZE];
 
 	check_args(argc);
-	fd_from = open_file_from(argv[1]);
-	read_bytes = read(fd_from, buffer, BUFFER_SIZE);
+	fd_from = open_file_from(argv[1]);                
+	read_bytes = read(fd_from, buffer, BUFFER_SIZE);   /* handle the first read faliure before opening the dst file */
 
 	if (read_bytes == -1)
 	{
