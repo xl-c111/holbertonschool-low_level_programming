@@ -11,17 +11,17 @@
  * Return: the actual number of letters it could read and print
  *         0 - if filename is NULL
  *           - if write() fails or does not write the expected amount of bytes
- * Description: - avoid null filename 
+ * Description: - validate input(avoid null filename)
  *              - open the file and read
  *              - allocate memory buffer for reading 
  *              - read contents into buffer read_bytes = read(fd, buffer, letters); 
- *              - write contens to terminal written_bytes = write(STDOUT_FILENO, buffer, read_bytes)
+ *              - write contents to terminal written_bytes = write(STDOUT_FILENO, buffer, read_bytes)
  *              - error handling and clean up 
  *              - return actual number of bytes printed to output 
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd;                               /* file descriptor */
+	int fd;                               
 	char *buffer;                         /* to store file contents */
 	ssize_t read_bytes, written_bytes;    /* number of bytes read and successfully written */
 
