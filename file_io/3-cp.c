@@ -83,16 +83,17 @@ int main(int argc, char *argv[])
 
 	check_args(argc);
 	fd_from = open_file_from(argv[1]);
-	fd_to = open_file_to(argv[2]);
-
 	read_bytes = read(fd_from, buffer, BUFFER_SIZE);
+
 	if (read_bytes == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		close(fd_from);
-		close(fd_to);
 		exit(98);
 	}
+
+	fd_to = open_file_to(argv[2]);
+
 	while (read_bytes > 0)
 	{
 		written_bytes = write(fd_to, buffer, read_bytes);
