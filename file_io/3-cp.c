@@ -32,6 +32,41 @@ void check_args(int argc)
 	}
 }
 /**
+ * open_file_from - opening a file for reading
+ * @filename: the name of file to open
+ * Return: the file descriptor
+ *         if the file can't be opened, program exits with code 98
+ */
+int open_file_from(const char *filename)
+{
+	int fd = open(filename, O_RDONLY);
+
+	if (fd == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
+		exit(98);
+	}
+	return (fd);
+}
+
+/**
+ * open_file_to - open a file to write
+ * @filename: the name of file to open
+ * Return: the file descriptor
+ *         if the file can't be opened, program exits with code 99
+ */
+int open_file_to(const char *filename)
+{
+	int fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0664);
+
+	if (fd == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
+		exit(99);
+	}
+	return (fd);
+}
+/**
  * main - copies the content of a file to another file
  * @argc: argument numbers
  * @argv: argument vector
@@ -47,20 +82,17 @@ int main(int argc, char *argv[])
 	char buffer[BUFFER_SIZE];
 
 	check_args(argc);
-	fd_from = open(argv[1], O_RDONLY);
-	if (fd_from == -1)
+	fd_from = open_file_from(argv[1]);
+	fd_to = open_file_to(argv[2]);
+
+	read_bytes = read(fd_from, buffer, BUFFER_SIZE);
+	if (read_bytes == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		close(fd_from);
+		close(fd_to);
 		exit(98);
 	}
-	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	if (fd_to == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		close(fd_from);
-		exit(99);
-	}
-	read_bytes = read(fd_from, buffer, BUFFER_SIZE);
 	while (read_bytes > 0)
 	{
 		written_bytes = write(fd_to, buffer, read_bytes);
@@ -72,13 +104,13 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 		read_bytes = read(fd_from, buffer, BUFFER_SIZE);
-	}
-	if (read_bytes == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		close(fd_from);
-		close(fd_to);
-		exit(98);
+		if (read_bytes == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			close(fd_from);
+			close(fd_to);
+			exit(98);
+		}
 	}
 	close_file(fd_from);
 	close_file(fd_to);
